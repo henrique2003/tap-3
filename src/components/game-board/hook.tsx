@@ -1,29 +1,35 @@
 import { drop, dropLine } from "@/src/assets";
 import { GAME } from "@/src/conts/game";
+import { Board, BoardFactory, PlayerType } from "@/src/domain";
 import { Audio } from "expo-av";
 import { goBack } from "expo-router/build/global-state/routing";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Alert
 } from "react-native";
-import { GameBoardProps, Player } from "./props";
+import { GameBoardProps } from "./props";
 import { GameBoardUtils } from "./utils";
 
 const { BOARD } = GAME;
 
 export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
-  const [board, setBoard] = useState(GameBoardUtils.createEmptyBoard());
-  const [currentPlayer, setCurrentPlayer] = useState<Player>(Player.Red);
+  const [board, setBoard] = useState<Board>(BoardFactory.create().getValue());
   const [moveCount, setMoveCount] = useState(0);
   const [showRules, setShowRules] = useState(false);
 
-  const botPlayer = Player.Yellow;
-
+  const botPlayer = PlayerType.Yellow;
   const dropSound = useRef<Audio.Sound | null>(null);
+  const currentPlayer = useMemo(() => board.currentPlayer, [board.currentPlayer]);
+
+  const movesUntilDrop = useMemo(() => {
+    const remaining = BOARD.DROP_CONDITION - (moveCount % BOARD.DROP_CONDITION);
+    return remaining === 0 ? BOARD.DROP_CONDITION : remaining;
+  }, [moveCount]);
+
 
   useEffect(() => {
-    if (singlePlayer && currentPlayer === botPlayer) {
-      const botMove = getBestMove(board, BOARD.MAX_DEPTH, Player.Yellow);
+    if (singlePlayer && currentPlayer.type === botPlayer) {
+      const botMove = getBestMove(board.cells, BOARD.MAX_DEPTH, PlayerType.Yellow);
       setTimeout(() => dropPiece(botMove, true), 500);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -38,7 +44,7 @@ export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
     loadSound();
 
     return () => {
-      dropSound.current?.unloadAsync(); // limpa ao desmontar
+      dropSound.current?.unloadAsync();
     };
   }, []);
 
@@ -149,55 +155,63 @@ export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
   };
 
   const dropPiece = async (colIndex: number, isBotPlayer?: boolean) => {
-    if (singlePlayer && currentPlayer === botPlayer && !isBotPlayer) {
+    if (singlePlayer && currentPlayer.type === botPlayer && !isBotPlayer || board.locked) {
       return;
     }
 
-    const newBoard = board.map((row) => [...row]);
+    const newBoard: Board = board.clone();
 
     for (let row = BOARD.ROWS - 1; row >= 0; row--) {
-      if (newBoard[row][colIndex] === 0) {
-        newBoard[row][colIndex] = currentPlayer;
+      if (newBoard.cells[row][colIndex] === 0) {
+        newBoard.cells[row][colIndex] = currentPlayer.type;
 
         const updatedMoveCount = moveCount + 1;
-
-        playDropSound();
-        setBoard(newBoard);
-
-        if (checkWin(newBoard, row, colIndex, currentPlayer)) {
-          return Alert.alert(
-            `Jogador ${Player.Red === currentPlayer ? "Vermelho" : "Amarelo"} venceu!`,
-            "Deseja jogar novamente?",
-            [
-              {
-                text: "Inicio",
-                style: "cancel",
-                onPress: () => {
-                  goBack();
-                },
-              },
-              {
-                text: "Jogar novamente",
-                onPress: () => {
-                  setBoard(GameBoardUtils.createEmptyBoard());
-                  setCurrentPlayer(Player.Red);
-                  setMoveCount(0);
-                },
-              },
-            ]
-          );
-        }
-
-        const isBoardFull = GameBoardUtils.isBoardFull(newBoard);
+        const isWin: boolean = checkWin(newBoard.cells, row, colIndex, currentPlayer.type)
+        const isBoardFull = GameBoardUtils.isBoardFull(newBoard.cells);
         const isDorpCondition = updatedMoveCount % BOARD.DROP_CONDITION === 0;
-        if (isDorpCondition || (isBoardFull && !isDorpCondition)) {
-          newBoard.pop();
-          newBoard.unshift(Array(BOARD.COLS).fill(0));
+        if (!isWin && isDorpCondition || (isBoardFull && !isDorpCondition)) {
+          newBoard.dropLine();
 
           playLineDropSound();
         }
 
-        setCurrentPlayer(currentPlayer === Player.Red ? Player.Yellow : Player.Red);
+        if (!isWin) {
+          newBoard.nextPlayer();
+        } else {
+          newBoard.lock();
+        }
+
+        playDropSound();
+        setBoard(newBoard);
+
+        if (isWin) {
+          setTimeout(() => {
+            Alert.alert(
+              `Jogador ${PlayerType.Red === currentPlayer.type ? "Vermelho" : "Amarelo"} venceu!`,
+              "Deseja jogar novamente?",
+              [
+                {
+                  text: "Inicio",
+                  style: "cancel",
+                  onPress: () => {
+                    goBack();
+                  },
+                },
+                {
+                  text: "Jogar novamente",
+                  onPress: () => {
+                    newBoard.declareWinner();
+                    newBoard.playAgain();
+
+                    setBoard(newBoard);
+                    setMoveCount(0);
+                  },
+                },
+              ]
+            );
+          }, 1000)
+          return
+        }
 
         return setMoveCount(updatedMoveCount);
       }
@@ -226,8 +240,7 @@ export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
   };
 
   return {
-    currentPlayer,
-    moveCount,
+    movesUntilDrop,
     board,
     dropPiece,
     handleChangeShowRules,

@@ -46,8 +46,4 @@ export class GameBoardUtils {
     const opponent = bot === 1 ? 2 : 1;
     return GameBoardUtils.countPotential(board, bot) - 1.5 * GameBoardUtils.countPotential(board, opponent);
   };
-
-  static createEmptyBoard (): number[][] {
-    return Array.from({ length: BOARD.ROWS }, () => Array(BOARD.COLS).fill(0));
-  }
 }

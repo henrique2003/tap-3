@@ -14,8 +14,7 @@ import { GameBoardProps } from "./props";
 
 export const GameBoard: React.FC<GameBoardProps> = (props) => {
   const {
-    currentPlayer,
-    moveCount,
+    movesUntilDrop,
     board,
     dropPiece,
     showRules,
@@ -25,19 +24,25 @@ export const GameBoard: React.FC<GameBoardProps> = (props) => {
   return (
     <SafeAreaView className="flex-1 bg-default-primary">
       <View className="flex-row items-center justify-between px-8 py-3 border-b border-neutral-700 w-full">
-        <View
-          className={`w-10 h-10 rounded-md ${
-            currentPlayer === 1 ? "opacity-100 scale-110" : "opacity-40"
-          } bg-red-600`}
-        />
+        <View className="flex-row items-center justify-start gap-3">
+          <View
+            className={`w-10 h-10 rounded-md ${board.player1 === board.currentPlayer ? "opacity-100 scale-110" : "opacity-40"} ${board.player1.color}`}
+          />
+          <Text className="text-white text-xl font-bold">
+            {board.player1.wins}
+          </Text>
+        </View>
         <Text className="text-white text-xl font-bold">
-          Jogada: {moveCount}
+          Drop em: {movesUntilDrop}
         </Text>
-        <View
-          className={`w-10 h-10 rounded-md ${
-            currentPlayer === 2 ? "opacity-100 scale-110" : "opacity-40"
-          } bg-yellow-400`}
-        />
+        <View className="flex-row items-center justify-start gap-3">
+          <Text className="text-white text-xl font-bold">
+            {board.player2.wins}
+          </Text>
+          <View
+            className={`w-10 h-10 rounded-md ${board.player2 === board.currentPlayer ? "opacity-100 scale-110" : "opacity-40"} ${board.player2.color}`}
+          />
+        </View>
       </View>
 
       <View className="flex-1 items-center justify-center">
@@ -45,7 +50,7 @@ export const GameBoard: React.FC<GameBoardProps> = (props) => {
           <View className="w-4 h-52 bg-orange-500 rounded-t-md mr-1" />
 
           <View className="bg-blue-800 p-2 rounded-xl shadow-lg shadow-blue-900">
-            {board.map((row, rowIndex) => (
+            {board.cells.map((row, rowIndex) => (
               <View key={rowIndex} className="flex-row">
                 {row.map((cell, colIndex) => (
                   <TouchableOpacity
