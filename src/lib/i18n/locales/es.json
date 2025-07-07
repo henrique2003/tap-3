@@ -5,8 +5,8 @@
   },
   "game-board": {
     "drop-in": "Caída en",
-    "player-red-wins": "¡La jugadora roja gana!",
-    "player-yellow-wins": "¡La jugadora amarilla gana!",
+    "player-red-wins": "¡La jugadora roja ganó!",
+    "player-yellow-wins": "¡La jugadora amarilla ganó!",
     "do-you-want-to-play-again": "¿Quieres jugar de nuevo?",
     "beginning": "Principio",
     "play-again": "Jugar de nuevo"

@@ -5,8 +5,8 @@
   },
   "game-board": {
     "drop-in": "Drop em",
-    "player-red-wins": "Jogador Vermelho vence!",
-    "player-yellow-wins": "O Jogador Amarelo vence!",
+    "player-red-wins": "Jogador Vermelho venceu!",
+    "player-yellow-wins": "O Jogador Amarelo venceu!",
     "do-you-want-to-play-again": "Você quer jogar novamente?",
     "beginning": "Inicio",
     "play-again": "Jogar novamente"

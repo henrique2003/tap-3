@@ -27,8 +27,8 @@ export const GameRulesModal: React.FC<GameRulesModalProps> = (props) => {
 
           <Text className="text-base text-white leading-relaxed mb-6">
             ▸ {t('game-rules-modal.rule-1')}{"\n\n"}
-            ▸ {t('game-rules-modal.rule-2-1')} {BOARD.WIN_CONDITION} ▸ {t('game-rules-modal.rule-2-2')}{"\n\n"}
-            ▸ {t('game-rules-modal.rule-3-1')} <Text className='text-orange-500 font-semibold'>{BOARD.DROP_CONDITION}</Text> ▸ {t('game-rules-modal.rule-3-2')}{"\n\n"}
+            ▸ {t('game-rules-modal.rule-2-1')} {BOARD.WIN_CONDITION} {t('game-rules-modal.rule-2-2')}{"\n\n"}
+            ▸ {t('game-rules-modal.rule-3-1')} <Text className='text-orange-500 font-semibold'>{BOARD.DROP_CONDITION}</Text> {t('game-rules-modal.rule-3-2')}{"\n\n"}
             ▸ {t('game-rules-modal.rule-4-1')} {BOARD.WIN_CONDITION} {t('game-rules-modal.rule-4-2')}
           </Text>
 
