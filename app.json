@@ -2,7 +2,7 @@
   "expo": {
     "name": "tap-3",
     "slug": "tap-3",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "tap-3",
@@ -40,7 +40,8 @@
           "backgroundColor": "#1a1a21"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true

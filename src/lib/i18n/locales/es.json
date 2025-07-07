@@ -1,0 +1,26 @@
+{
+  "home": {
+    "single-player": "Un jugador",
+    "two-players": "2 jugadores"
+  },
+  "game-board": {
+    "drop-in": "Caída en",
+    "player-red-wins": "¡La jugadora roja gana!",
+    "player-yellow-wins": "¡La jugadora amarilla gana!",
+    "do-you-want-to-play-again": "¿Quieres jugar de nuevo?",
+    "beginning": "Principio",
+    "play-again": "Jugar de nuevo"
+  }, 
+  "game-rules-modal": {
+    "how-to-play": "¿Cómo jugar?",
+    "rule-1": "Tú y tu oponente se turnan para dejar caer piezas en columnas.",
+    "rule-2-1": "El objetivo es alinear",
+    "rule-2-2": "piezas del mismo color, ya sea horizontal, vertical o diagonal.",
+    "rule-3-1": "¡Cada",
+    "rule-3-2": "movimientos, la fila inferior desaparece!",
+    "rule-4-1": "Quien primero alinee las",
+    "rule-4-2": "piezas gana.",
+    "dont-show-again": "¡No volver a mostrar!",
+    "play": "Jugar"
+  }
+}

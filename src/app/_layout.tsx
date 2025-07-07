@@ -13,6 +13,8 @@ import { StatusBar } from 'expo-status-bar';
 import "@/src/styles/global.css";
 import { useEffect } from 'react';
 
+import '../lib/i18n';
+
 export default function RootLayout() {
   const [loaded] = useFonts({
     Inter_400Regular,
