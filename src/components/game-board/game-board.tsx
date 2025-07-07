@@ -1,6 +1,7 @@
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   SafeAreaView,
   Text,
@@ -21,6 +22,8 @@ export const GameBoard: React.FC<GameBoardProps> = (props) => {
     handleChangeShowRules
   } = useGameBoard(props);
 
+  const { t } = useTranslation()
+
   return (
     <SafeAreaView className="flex-1 bg-default-primary">
       <View className="flex-row items-center justify-between px-8 py-3 border-b border-neutral-700 w-full">
@@ -33,7 +36,7 @@ export const GameBoard: React.FC<GameBoardProps> = (props) => {
           </Text>
         </View>
         <Text className="text-white text-xl font-bold">
-          Drop em: {movesUntilDrop}
+          {t("game-board.drop-in")}: {movesUntilDrop}
         </Text>
         <View className="flex-row items-center justify-start gap-3">
           <Text className="text-white text-xl font-bold">

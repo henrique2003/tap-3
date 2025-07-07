@@ -4,6 +4,7 @@ import { Board, BoardFactory, PlayerType } from "@/src/domain";
 import { Audio } from "expo-av";
 import { goBack } from "expo-router/build/global-state/routing";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Alert
 } from "react-native";
@@ -16,6 +17,8 @@ export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
   const [board, setBoard] = useState<Board>(BoardFactory.create().getValue());
   const [moveCount, setMoveCount] = useState(0);
   const [showRules, setShowRules] = useState(false);
+
+  const { t } = useTranslation()
 
   const botPlayer = PlayerType.Yellow;
   const dropSound = useRef<Audio.Sound | null>(null);
@@ -187,18 +190,18 @@ export const useGameBoard = ({ singlePlayer }: GameBoardProps) => {
         if (isWin) {
           setTimeout(() => {
             Alert.alert(
-              `Jogador ${PlayerType.Red === currentPlayer.type ? "Vermelho" : "Amarelo"} venceu!`,
-              "Deseja jogar novamente?",
+              `${PlayerType.Red === currentPlayer.type ? t('game-board.player-red-wins') : t('game-board.player-yellow-wins')}`,
+              `${t('game-board.do-you-want-to-play-again')}`,
               [
                 {
-                  text: "Inicio",
+                  text: `${t('game-board.beginning')}`,
                   style: "cancel",
                   onPress: () => {
                     goBack();
                   },
                 },
                 {
-                  text: "Jogar novamente",
+                  text: `${t('game-board.play-again')}`,
                   onPress: () => {
                     newBoard.declareWinner();
                     newBoard.playAgain();

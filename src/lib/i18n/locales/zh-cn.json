@@ -1,0 +1,26 @@
+{
+  "home": {
+    "single-player": "单人游戏",
+    "two-players": "2名玩家"
+  },
+  "game-board": {
+    "drop-in": "滴落",
+    "player-red-wins": "红色玩家获胜！",
+    "player-yellow-wins": "黄色玩家获胜！",
+    "do-you-want-to-play-again": "你想再玩一次吗？",
+    "beginning": "开始",
+    "play-again": "再次播放"
+  },
+  "game-rules-modal": {
+    "how-to-play": "怎么玩？",
+    "rule-1": "你和你的对手轮流将棋子放入列中。",
+    "rule-2-1": "The objective is to align",
+    "rule-2-2": "目标是将 1 个相同颜色的棋子水平、垂直或对角排列。",
+    "rule-3-1": "每移动",
+    "rule-3-2": "，底行就会消失！",
+    "rule-4-1": "谁先将 1 个棋子排列整齐，谁就获胜。",
+    "rule-4-2": "棋子先出者获胜。",
+    "dont-show-again": "不要再出现了！",
+    "play": "玩"
+  }
+}

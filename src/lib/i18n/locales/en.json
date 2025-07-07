@@ -1,0 +1,26 @@
+{
+  "home": {
+    "single-player": "Sigle Player",
+    "two-players": "2 Players"
+  },
+  "game-board": {
+    "drop-in": "Drop in",
+    "player-red-wins": "Red Player wins!",
+    "player-yellow-wins": "Yellow player wins!",
+    "do-you-want-to-play-again": "Do you want to play again?",
+    "beginning": "Beginning",
+    "play-again": "Play again"
+  },
+  "game-rules-modal": {
+    "how-to-play": "How to play?",
+    "rule-1": "You and your opponent take turns dropping pieces into columns.",
+    "rule-2-1": "The objective is to align",
+    "rule-2-2": "pieces of the same color, either horizontally, vertically or diagonally.",
+    "rule-3-1": "Every",
+    "rule-3-2": "moves, the bottom row disappears!",
+    "rule-4-1": "Whoever aligns",
+    "rule-4-2": "pieces first wins.",
+    "dont-show-again": "Dont't show again!",
+    "play": "Play"
+  }
+}

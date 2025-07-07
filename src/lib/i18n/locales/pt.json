@@ -1,0 +1,26 @@
+{
+  "home": {
+    "single-player": "Um jogador",
+    "two-players": "2 Jogadores"
+  },
+  "game-board": {
+    "drop-in": "Drop em",
+    "player-red-wins": "Jogador Vermelho vence!",
+    "player-yellow-wins": "O Jogador Amarelo vence!",
+    "do-you-want-to-play-again": "Você quer jogar novamente?",
+    "beginning": "Inicio",
+    "play-again": "Jogar novamente"
+  },
+  "game-rules-modal": {
+    "how-to-play": "Como jogar?",
+    "rule-1": "Você e seu oponente se revezam soltando peças em colunas.",
+    "rule-2-1": "O objetivo é alinhar",
+    "rule-2-2": "peças da mesma cor, seja na horizontal, vertical ou diagonal.",
+    "rule-3-1": "A cada",
+    "rule-3-2": "jogadas, a linha inferior desaparece!",
+    "rule-4-1": "Vence quem alinhar",
+    "rule-4-2": "peças primeiro.",
+    "dont-show-again": "Não mostrar novamente!",
+    "play": "Jogar"
+  }
+}
