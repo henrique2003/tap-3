@@ -1,15 +1,21 @@
 {
   "home": {
-    "single-player": "Um jogador",
-    "two-players": "2 Jogadores"
+    "enter": "Entrar"
+  },
+  "register-user" : {
+    "play": "Jogar",
+    "enter": "Entrar"
   },
   "game-board": {
     "drop-in": "Drop em",
-    "player-red-wins": "Jogador Vermelho venceu!",
-    "player-yellow-wins": "O Jogador Amarelo venceu!",
-    "do-you-want-to-play-again": "Você quer jogar novamente?",
-    "beginning": "Inicio",
-    "play-again": "Jogar novamente"
+    "play": "Jogar"
+  },
+  "end-game-modal": {
+    "play-again": "Jogar novamente",
+    "plays": "Jogadas",
+    "drops": "Drops",
+    "you-win": "Você Venceu!",
+    "not-this-time": "Não foi dessa vez!"
   },
   "game-rules-modal": {
     "how-to-play": "Como jogar?",

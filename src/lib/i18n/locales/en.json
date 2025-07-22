@@ -1,15 +1,21 @@
 {
   "home": {
-    "single-player": "Sigle Player",
-    "two-players": "2 Players"
+    "enter": "Enter"
+  },
+  "register-user" : {
+    "play": "Play",
+    "enter": "Enter"
   },
   "game-board": {
     "drop-in": "Drop in",
-    "player-red-wins": "Red Player wins!",
-    "player-yellow-wins": "Yellow player wins!",
-    "do-you-want-to-play-again": "Do you want to play again?",
-    "beginning": "Beginning",
-    "play-again": "Play again"
+    "play": "Play"
+  },
+  "end-game-modal": {
+    "play-again": "Play again",
+    "plays": "plays",
+    "drops": "Drops",
+    "you-win": "You win!",
+    "not-this-time": "Not this time!"
   },
   "game-rules-modal": {
     "how-to-play": "How to play?",

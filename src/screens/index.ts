@@ -1,3 +1,3 @@
-export * from './game-2-players/game-2-players';
-export * from './game-singleplayer/game-singleplayer';
+export * from './game/game';
 export * from './home/home';
+export * from './register-user/register-user';

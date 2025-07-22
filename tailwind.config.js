@@ -11,6 +11,14 @@ module.exports = {
     extend: {
       colors: {
         "default-primary": "#1a1a21",
+        "default-yellow-400": "#ecd20d",
+        "default-grenn-300": "rgb(129, 182, 76)",
+        "default-red-300": "#ed4337",
+        "default-green-300": "#5cb85c",
+      },
+      fontFamily: {
+        goldman: ["Goldman_400Regular"],
+        "goldman-bold": ["Goldman_700Bold"],
       },
     },
   },

@@ -1,16 +1,22 @@
 {
   "home": {
-    "single-player": "Un jugador",
-    "two-players": "2 jugadores"
+    "enter": "Entrar"
+  },
+  "register-user" : {
+    "play": "Jugar",
+    "enter": "Entrar"
   },
   "game-board": {
     "drop-in": "Caída en",
-    "player-red-wins": "¡La jugadora roja ganó!",
-    "player-yellow-wins": "¡La jugadora amarilla ganó!",
-    "do-you-want-to-play-again": "¿Quieres jugar de nuevo?",
-    "beginning": "Principio",
-    "play-again": "Jugar de nuevo"
+    "play": "Jugar"
   }, 
+  "end-game-modal": {
+    "play-again": "Jugar de nuevo",
+    "plays": "Jugadas",
+    "drops": "Caídas",
+    "you-win": "¡Ganaste!",
+    "not-this-time": "¡Esta vez no!"
+  },
   "game-rules-modal": {
     "how-to-play": "¿Cómo jugar?",
     "rule-1": "Tú y tu oponente se turnan para dejar caer piezas en columnas.",

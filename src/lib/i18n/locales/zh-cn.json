@@ -1,15 +1,21 @@
 {
   "home": {
-    "single-player": "单人游戏",
-    "two-players": "2名玩家"
+    "enter": "进入"
+  },
+  "register-user" : {
+    "play": "玩",
+    "enter": "进入"
   },
   "game-board": {
     "drop-in": "滴落",
-    "player-red-wins": "红色玩家获胜！",
-    "player-yellow-wins": "黄色玩家获胜！",
-    "do-you-want-to-play-again": "你想再玩一次吗？",
-    "beginning": "开始",
-    "play-again": "再次播放"
+    "play": "玩"
+  },
+  "end-game-modal": {
+    "play-again": "再次播放",
+    "plays": "移动",
+    "drops": "瀑布",
+    "you-win": "你赢了",
+    "not-this-time": "这次不行！"
   },
   "game-rules-modal": {
     "how-to-play": "怎么玩？",

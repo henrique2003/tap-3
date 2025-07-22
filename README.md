@@ -13,3 +13,18 @@
 ## images
 - iphone - 1290 × 2796
 - ipad - 2048 × 2732
+
+
+## Todos
+- Trocar o Pop-up do vencedor
+- Tier-list
+- Config ou Carrinho
+- Integrar com api
+- Publicar api
+
+## Site para Efeitos sonoros
+- Freesound.org
+- Pixabay Sound Effects
+- Zapsplat
+- Mixkit Sound Effects
+- SoundBible
