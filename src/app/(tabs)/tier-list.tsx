@@ -1,12 +1,5 @@
-import { Text, View } from "react-native";
+import { TierList } from "@/src/screens";
 
 export default function HubScreen() {
-  return (
-    <View className="flex-1 bg-default-primary justify-center items-center">
-      <Text className="text-lg mt-10 font-medium text-white opacity-80">Tier List</Text>
-      <View className="">
-
-      </View>
-    </View>
-  )
+  return <TierList />
 }

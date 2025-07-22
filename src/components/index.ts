@@ -7,3 +7,4 @@ export * from './modals';
 export * from './providers/providers';
 export * from './safe-container/safe-container';
 export * from './splash-screen/splash-screen';
+export * from './tier-list-item/tier-list-item';

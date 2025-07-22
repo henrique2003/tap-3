@@ -12,7 +12,8 @@
     "prebuild:clean": "npx expo prebuild --clean",
     "build:ios": "eas build --platform ios --profile production",
     "submit:ios": "eas submit --platform ios --profile production",
-    "publish:ios": "npm run build:ios && npm run submit:ios"
+    "publish:ios": "npm run build:ios && npm run submit:ios",
+    "verify:circular": "npx madge --circular src/"
   },
   "dependencies": {
     "@expo-google-fonts/goldman": "^0.4.1",
