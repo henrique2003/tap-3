@@ -1,3 +1,4 @@
+export * from './configs/configs';
 export * from './game/game';
 export * from './home/home';
 export * from './register-user/register-user';

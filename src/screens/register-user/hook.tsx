@@ -26,13 +26,20 @@ export const useRegisterUser = () => {
       const result = await StorageManager.getItem(CONFIG_USER.USER_ID_STORAGE_KEY)
       if (result.isFailure() || !result.getValue() || result.getValue()!.length < 2 || typeof result.getValue() !== 'string') {
         return
-      }    
+      }
+
+      const user = await userService.getById(result.getValue()!)
+      if (user.isFailure()) {
+        return
+      }
+
+      loadUser(user.getValue()!)
 
       router.push("/(tabs)/game")
     }
 
     void getUserId()
-  }, [])
+  }, [loadUser])
 
   function handleChangeUsername(username: string) {
     setUsername(prevState => ({

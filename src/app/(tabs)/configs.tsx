@@ -1,9 +1,5 @@
-import { Text, View } from "react-native";
+import { Configs } from "@/src/screens";
 
 export default function HubScreen() {
-  return (
-    <View className="flex-1 bg-default-primary justify-center items-center">
-      <Text className="text-lg mt-10 font-medium text-white opacity-80">Configs</Text>
-    </View>
-  )
+  return <Configs />
 }
