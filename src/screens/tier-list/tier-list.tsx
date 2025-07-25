@@ -1,5 +1,6 @@
 import { SafeContainer, TierListItem } from "@/src/components"
 import React from "react"
+import { useTranslation } from "react-i18next"
 import { ActivityIndicator, FlatList, RefreshControl, Text, View } from "react-native"
 import { useTierList } from "./hook"
 
@@ -12,10 +13,12 @@ export const TierList: React.FC = () => {
     users
   } = useTierList()
 
+  const { t } = useTranslation()
+
   return (
     <SafeContainer>
       <View className="flex-1 px-4 pb-4 w-full">
-        <Text className="text-2xl font-bold mt-5 mb-4 text-center text-white">Tier List</Text>
+        <Text className="text-2xl font-bold mt-5 mb-4 text-center text-white">{t("tier-list.title")}</Text>
 
         <FlatList
           className="mt-3 pb-4"

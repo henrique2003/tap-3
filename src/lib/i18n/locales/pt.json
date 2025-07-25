@@ -28,5 +28,8 @@
     "rule-4-2": "peças primeiro.",
     "dont-show-again": "Não mostrar novamente!",
     "play": "Jogar"
+  },
+  "tier-list": {
+    "title": "Tier List"
   }
 }

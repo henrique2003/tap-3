@@ -28,5 +28,8 @@
     "rule-4-2": "棋子先出者获胜。",
     "dont-show-again": "不要再出现了！",
     "play": "玩"
+  },
+  "tier-list": {
+    "title": "等级列表"
   }
 }

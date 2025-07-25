@@ -28,5 +28,8 @@
     "rule-4-2": "piezas gana.",
     "dont-show-again": "¡No volver a mostrar!",
     "play": "Jugar"
+  },
+  "tier-list": {
+    "title": "Lista de niveles"
   }
 }

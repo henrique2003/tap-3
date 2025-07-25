@@ -28,5 +28,8 @@
     "rule-4-2": "pieces first wins.",
     "dont-show-again": "Dont't show again!",
     "play": "Play"
+  },
+  "tier-list": {
+    "title": "Tier List"
   }
 }

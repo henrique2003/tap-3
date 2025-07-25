@@ -32,4 +32,24 @@ export class StorageManager {
       return Result.failure(`${error.message}`);
     }
   };
+
+  static clear = async (): Promise<Result<void>> => {
+    try {
+      await AsyncStorage.clear();
+
+      return Result.success();
+    } catch (error: any) {
+      return Result.failure(`${error.message}`);
+    }
+  };
+
+  static clearItem = async (key: string): Promise<Result<void>> => {
+    try {
+      await AsyncStorage.removeItem(key);
+
+      return Result.success();
+    } catch (error: any) {
+      return Result.failure(`${error.message}`);
+    }
+  };
 }
