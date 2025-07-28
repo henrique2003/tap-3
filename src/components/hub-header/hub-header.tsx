@@ -8,7 +8,7 @@ export const HubHeader: React.FC<HubHeaderProps> = ({
   username
 }) => {
   return (
-    <View className='w-full max-w-[350px] py-2 flex-row justify-between items-center'>
+    <View className='w-full px-8 py-2 flex-row justify-between items-center'>
       <View className='flex-row items-center gap-2'>
         <Image width={50} height={50} className='rounded-full w-[50px] h-[50px]' source={avatar03} />
         <Text className="text-white font-bold text-xl">{username}</Text>
